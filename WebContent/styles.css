@@ -1,0 +1,54 @@
+.panel{
+	background-color:beige; 
+	border-radius: 5px;  
+}
+
+.pad-left{
+	margin-left: 2px; 
+}
+
+.pad-right{
+	margin-right: 2px; 
+}
+
+.top-left{
+	height:300px; 
+	width:700px;
+}
+
+.top-right{
+	height:300px; 
+	width:700px;
+}
+
+.logo-presentation{
+	height: 100px; 
+	width: 250px; 
+	padding-left: 60px; 
+}
+
+.header-location{
+	text-align: center;
+	font-style: italic;
+	font-size: 30px; 
+	padding: 20px;  
+}
+
+.row{
+	margin-top: 10px; 
+}
+
+.row-space{
+	padding-top: 10px; 
+}
+
+.category{
+	font-size: 20px; 
+}
+
+.order-button-location{
+	position: relative;
+	bottom: 0px;
+	right: 20px; 
+	margin-top: 55%; 
+}

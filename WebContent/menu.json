@@ -1,0 +1,81 @@
+{
+	"menu":[
+		{
+			"category": "Breakfast",
+			"items": [
+				{
+					"name": "Steak & Eggs",
+					"description": "Three eggs any style served with your choice cut of seasoned AAA beef.",
+					"ingredients": [
+						"meat",
+						"eggs"
+					],
+					"options": [
+						{
+							"option_desc": "8 oz New York",
+							"option_price": "18.99"
+						},
+						{
+							"option_desc": "6 oz Sirloin",
+							"option_price": "16.99"
+						}
+					],
+					"image": "steak_and_egg.png"
+				},
+				{
+					"name": "Spinach & Swiss Omelette",
+					"price": "14.69",
+					"description": "Swiss cheese, sautéed baby spinach, red onion, tomato and mushrooms finished with creamy hollandaise sauce.",
+					"ingredients": [
+						"cheese?",
+						"eggs probably",
+						"spinach"
+					]
+				},
+				{
+					"name": "Original French Toast",
+					"price": "10.59",
+					"description": "Three slices of French bread dipped in our original cinnamon and nutmeg mixture, grilled golden brown and sprinkled with powdered sugar.",
+					"ingredients": [
+						"bread",
+						"some other stuff"
+					],
+					"options": [
+						{
+							"option_desc": "Add bacon",
+							"option_price": "4.59"
+						},
+						{
+							"option_desc": "Add sausage",
+							"option_price": "4.59"
+						},
+						{
+							"option_desc": "Add blueberry",
+							"option_price": "2.99"
+						},
+						{
+							"option_desc": "Add strawberry",
+							"option_price": "2.99"
+						}
+					]
+				}
+			]
+		},
+		{
+			"category": "Appetizers",
+			"items": []
+		},
+		{
+			"category": "Soups",
+			"items": []
+		},
+		{
+			"category": "Salads",
+			"items": []
+		},
+		{
+			"category": "Don't remember the rest of the categories",
+			"items": []
+		}
+	]
+}

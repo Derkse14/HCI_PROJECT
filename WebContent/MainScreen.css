@@ -1,0 +1,48 @@
+@CHARSET "ISO-8859-1";
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+	background-color: #80D9FF;
+	margin: 0;
+	padding: 0;
+}
+
+.background {
+	margin: 0 auto;
+	width:35%;
+	height:100%;
+	display:block;
+ 	background-color:#3DA1CC;
+}
+
+.categories {
+	text-align: center;
+	color: #ffcc00;
+	background-color:inherit;
+	padding-top: 5%;
+}
+
+a {
+	background-color: #80D9FF;
+	border-radius:25px;
+	border:1px solid black;
+	display:block;
+	color: black;
+	font-size:4vh;
+	margin:2% 10%;
+}
+
+a:hover {
+	background-color:#FFCC00;
+}
+
+.logo {
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+}
