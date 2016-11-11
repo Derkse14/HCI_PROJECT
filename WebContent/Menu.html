@@ -6,8 +6,9 @@
 	<link rel="stylesheet" href="bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script src="MenuGenerator.js"></script>
 </head>
-<body>
+<body onload="generateMenu()">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-md-3"> <img class="logo-presentation" src="../Images/Logo.png"> </div>
@@ -34,8 +35,8 @@
 				<div class="col-md-12 row-space category"><a href="#Baverages">Beverages</a></div>
 				<div class="col-md-12 row-space category"><a href="#Desserts">Desserts</a></div>
 			</div>
-			<div class="col-md-6">
-				
+			<div class="col-md-6" >
+				<ul class="menu"></ul>
 			</div>
 			<div class="col-md-3">
 				<div class="col-md-12 row-space category">List of Orders:</div>
