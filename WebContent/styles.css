@@ -52,3 +52,41 @@
 	right: 20px; 
 	margin-top: 55%; 
 }
+
+.menu{
+	background-color:#3DA1CC;
+}
+
+.categoryName {
+	text-align:center;
+	background-color:#3DA1CC;
+	padding:10px;
+	margin:0;
+}
+
+.Item{
+	margin:0;
+	padding:10px;
+}
+
+.Item:nth-child(even) {
+	background-color:#53cbff;
+}
+
+.Item:nth-child(odd) {
+	background-color:#80D9FF;
+}
+
+.price {
+	float: right;
+}
+
+.itemName {
+	margin:0;
+	padding:0;
+}
+
+.description{
+	margin:0;
+	padding-bottom:10px;
+}
