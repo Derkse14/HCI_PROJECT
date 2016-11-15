@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8"/>
 	<title>Order Food</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" href="bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="menu.json"></script>
   	<script src="MenuGenerator.js"></script>
 </head>
-<body onload="generateMenu()">
+<body onload="generateMenuSidebar(); generateMenu();">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-md-3"> <img class="logo-presentation" src="../Images/Logo.png"> </div>
@@ -25,15 +27,7 @@
 					<div class="col-md-3 category">Search</div>
 					<div class="col-md-9"><input type="text" name="searchCategory"></div>
 				</div>
-				<div class="col-md-12 row-space category"><a href="#Breakfast">Breakfast</a></div>
-				<div class="col-md-12 row-space category"><a href="#Appetizers">Appetizers</a></div>
-				<div class="col-md-12 row-space category"><a href="#Salads">Salads</a></div>
-				<div class="col-md-12 row-space category"><a href="#Soups">Soups</a></div>
-				<div class="col-md-12 row-space category"><a href="#Steaks">Steaks</a></div>
-				<div class="col-md-12 row-space category"><a href="#Pasta">Pasta</a></div>
-				<div class="col-md-12 row-space category"><a href="#Sandwiches">Sandwiches</a></div>
-				<div class="col-md-12 row-space category"><a href="#Beverages">Beverages</a></div>
-				<div class="col-md-12 row-space category"><a href="#Desserts">Desserts</a></div>
+				<div class="menuSidebar"></div>
 			</div>
 			<div class="col-md-6" >
 				<div class="menu"></div>
