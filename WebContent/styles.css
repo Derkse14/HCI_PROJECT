@@ -90,3 +90,27 @@
 	margin:0;
 	padding-bottom:10px;
 }
+
+.detailedView{
+	background-color:#3DA1CC;
+	visibility:hidden;
+}
+
+.detailedView img {
+	width:100%;
+	display:block;
+	margin: 0 auto;
+	background-color:black;
+	
+}
+
+.detailedView p {
+	font-size: 2em;
+}
+
+.detailedView .backButton {
+	padding:5px;
+	background-color:#ffcc00;	
+	border-radius:25px;
+	border:1px solid black;
+}

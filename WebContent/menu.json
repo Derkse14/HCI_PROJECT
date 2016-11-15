@@ -9,17 +9,24 @@ var	menu = [
 						"meat",
 						"eggs"
 					],
-					"options": [
+					"selections": [
 						{
-							"option_desc": "8 oz New York",
-							"option_price": "18.99"
-						},
-						{
-							"option_desc": "6 oz Sirloin",
-							"option_price": "16.99"
+							"selection_id": "Steak",
+							"selection_desc": "Choice of steak: ",
+							"options": [
+							{
+								"option_desc": "8 oz New York",
+								"option_price": "18.99"
+							},
+							{
+								"option_desc": "6 oz Sirloin",
+								"option_price": "16.99"
+							}
+						]
 						}
+						
 					],
-					"image": "steak_and_egg.png"
+					"image": "steak-and-eggs.jpg"
 				},
 				{
 					"name": "Spinach & Swiss Omelette",
@@ -29,7 +36,8 @@ var	menu = [
 						"cheese?",
 						"eggs probably",
 						"spinach"
-					]
+					],
+					"image": "spinach-and-swiss.png"
 				},
 				{
 					"name": "Original French Toast",
@@ -74,7 +82,7 @@ var	menu = [
 					]
 				},
 				{
-					"name": "Southwest Flatbeard",
+					"name": "Southwest Flatbread",
 					"price": "11.99",
 					"description": "Diced BBQ chicken, bacon and red onions baked on our flatbread with sweet and smoky BBQ sauce and pizza mozzarella, then topped with a drizzle of ranch dressing and a sprinkling of fresh parsley.",
 					"options": [
