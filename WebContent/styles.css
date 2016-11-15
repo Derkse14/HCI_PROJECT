@@ -94,6 +94,7 @@
 .detailedView{
 	background-color:#3DA1CC;
 	visibility:hidden;
+	padding:10px;
 }
 
 .detailedView img {
@@ -105,11 +106,17 @@
 }
 
 .detailedView p {
+	margin:10px;
 	font-size: 2em;
+}
+
+.detailedView .selections {
+	margin:10px;
 }
 
 .detailedView .backButton {
 	padding:5px;
+	margin:20px;
 	background-color:#ffcc00;	
 	border-radius:25px;
 	border:1px solid black;

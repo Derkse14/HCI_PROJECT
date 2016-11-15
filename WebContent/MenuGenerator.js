@@ -45,17 +45,25 @@ function generateDetailedView(name) {
 //		alert(item.name);
 	}
 	$(".headerTitle").text(item.name);
-	$(".detailedView img").attr("src", "../Images/"+item.image);
-	$(".detailedView p").text(item.description);
-	for(var i = 0; i < item.selections.length; i++) {
-		var select = $("<select>", {"id" : item.selections[i].selection_id});
-		$(".detailedView .selections").append($("<label>").text(item.selections[i].selection_desc));
-		$(".detailedView .selections").append(select);
-		for(var j = 0; j < item.selections[i].options.length; j++) {
-			var option = item.selections[i].options[j].option_desc;
-			$("#"+item.selections[i].selection_id).append($("<option>", {value: option, text: option}));
+	$(".detailedView").append($("<img>", {"src" : "../Images/"+item.image}));
+	$(".detailedView").append($("<p>").text(item.description));
+	$(".detailedView").append($("<div>", {"class" : "selections"}));
+	
+	if(item.selections != null) {
+		for(var i = 0; i < item.selections.length; i++) {
+			var select = $("<select>", {"id" : item.selections[i].selection_id});
+
+			$(".detailedView .selections").append($("<label>").text(item.selections[i].selection_desc));
+			$(".detailedView .selections").append(select);
+			for(var j = 0; j < item.selections[i].options.length; j++) {
+				var option = item.selections[i].options[j].option_desc;
+				$("#"+item.selections[i].selection_id).append($("<option>", {value: option, text: option}));
+			}
 		}
 	}
+
+	$(".detailedView").append($("<label>", {"class" : "backButton"}).text("Go back"));
+	
 	
 }
 
@@ -71,10 +79,18 @@ function getItem(name) {
 	}
 }
 
-$(document).ready(function() {
-	$(".backButton").click(function(){
-		location.reload();
-	});
+$(document).on("click", ".backButton", function(e) {
+	$(".menu").show();
+	$(".detailedView").css("visibility", "hidden");
+	$(".detailedView").empty();
+	location.reload();
+});
+
+$(document).on("click", ".category", function(e) {
+	$(".menu").show();
+	$(".detailedView").css("visibility", "hidden");
+	$(".detailedView").empty();
+	location.reload();
 });
 
 
