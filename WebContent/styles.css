@@ -1,6 +1,5 @@
 .panel{
-	background-color:beige; 
-	border-radius: 5px;  
+	border-radius: 5px;   
 }
 
 .pad-left{
@@ -40,17 +39,39 @@
 
 .row-space{
 	padding-top: 10px; 
+	text-align: center;
 }
 
 .category{
 	font-size: 20px; 
 }
 
+
 .order-button-location{
 	position: relative;
 	bottom: 0px;
 	right: 20px; 
 	margin-top: 55%; 
+}
+
+.leftSideBarStyles{
+	background-color: #3DA1CC; 
+}
+
+a {
+	border-radius:25px;
+	border:1px solid black;
+	display:block;
+	font-size:4vh;
+	margin:2% 10%;
+}
+
+a:link, a:visited{
+	color: black; 
+}
+
+a:hover {
+	background-color:#FFCC00;
 }
 
 .menu{

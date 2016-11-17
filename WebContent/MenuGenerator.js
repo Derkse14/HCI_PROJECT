@@ -8,9 +8,9 @@ function generateMenuSidebar() {
 	for(ii = 0; ii < menu.length; ii++) {
 		var category = menu[ii].category;
 		var catDiv = $("<div>", {"id" : category.replace(clean_regex, '') + "Sidebar",
-								 "class" : "col-md-12 row-space category"});
+								 "class" : "col-xs-12 row-space category"});
 		$(".menuSidebar").append(catDiv);
-		$("#"+category.replace(clean_regex, '') + "Sidebar").append($("<a>", {"href" : "#" + category}).text(category));
+		$("#"+category.replace(clean_regex, '') + "Sidebar").append($("<a>", {"href" : "Menu.html#" + category}).text(category));
 	}
 }
 
