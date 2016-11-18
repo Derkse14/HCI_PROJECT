@@ -59,6 +59,7 @@ function generateDetailedView(name) {
 				var option = item.selections[i].options[j].option_desc;
 				$("#"+item.selections[i].selection_id).append($("<option>", {value: option, text: option}));
 			}
+			
 		}
 	}
 

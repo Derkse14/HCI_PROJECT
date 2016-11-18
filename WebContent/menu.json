@@ -47,27 +47,35 @@ var	menu = [
 						"bread",
 						"some other stuff"
 					],
-					"options": [
+					"selections": [
 						{
-							"option_desc": "Add bacon",
-							"option_price": "4.59"
-						},
-						{
-							"option_desc": "Add sausage",
-							"option_price": "4.59"
-						},
-						{
-							"option_desc": "Add blueberry",
-							"option_price": "2.99"
-						},
-						{
-							"option_desc": "Add strawberry",
-							"option_price": "2.99"
+							"selection_id": "Topping",
+							"selection_desc": "Choice of topping: ",
+							"options": [
+								{
+									"option_desc": "Add bacon",
+									"option_price": "4.59"
+								},
+								{
+									"option_desc": "Add sausage",
+									"option_price": "4.59"
+								},
+								{
+									"option_desc": "Add blueberry",
+									"option_price": "2.99"
+								},
+								{
+									"option_desc": "Add strawberry",
+									"option_price": "2.99"
+								}
+							]
 						}
-					], 
+						
+					],  
 					"image": "original-french-toast.png"
 				}
 			]
+			
 		},
 		{
 			"category": "Appetizers",
@@ -76,10 +84,26 @@ var	menu = [
 					"name": "Wings",
 					"price": "10.99",
 					"description": "Fried chicken wings with cryspy skin",
-					"options": [
-						"Salt & Pepper",
-						"Buffalo",
-						"Honey Garlic"
+					"selections": [
+						{
+							"selection_id": "Flavour",
+							"selection_desc": "Choice of flavour: ",
+							"options": [
+								{
+									"option_desc": "Salt & Pepper",
+									"option_price": "2.50"
+								},
+								{
+									"option_desc": "Buffalo",
+									"option_price": "1.59"
+								},
+								{
+									"option_desc": "Honey Garlic",
+									"option_price": "2.40"
+								}
+							]
+						}
+						
 					],
 					"image": "wings.png"
 				},
@@ -87,10 +111,26 @@ var	menu = [
 					"name": "Southwest Flatbread",
 					"price": "11.99",
 					"description": "Diced BBQ chicken, bacon and red onions baked on our flatbread with sweet and smoky BBQ sauce and pizza mozzarella, then topped with a drizzle of ranch dressing and a sprinkling of fresh parsley and avocado.",
-					"options": [
-						"Chipotle",
-						"Marinara",
-						"Ranch"
+					"selections": [
+						{
+							"selection_id": "Sauce",
+							"selection_desc": "Choice of sauce: ",
+							"options": [
+								{
+									"option_desc": "Add Chipotle",
+									"option_price": "0.50"
+								},
+								{
+									"option_desc": "Add Marinara",
+									"option_price": "0.59"
+								},
+								{
+									"option_desc": "Add Ranch",
+									"option_price": "0.40"
+								}
+							]
+						}
+						
 					],
 					"image": "Southwest-flatbread.png"
 				}
@@ -126,9 +166,22 @@ var	menu = [
 					"name": "French Onion Soup",
 					"price": "19.96",
 					"description": "Onions, Turkish bay leaves, unsalted butter, flour, home mede beef broth, black pepper, thyme", 
-					"options": [
-						"White wine", 
-						"Red Wine"
+					"selections": [
+						{
+							"selection_id": "Wine",
+							"selection_desc": "Choice of wine: ",
+							"options": [
+								{
+									"option_desc": "Add White wine",
+									"option_price": "3.50"
+								},
+								{
+									"option_desc": "Add Red Wine",
+									"option_price": "4.59"
+								}
+							]
+						}
+						
 					], 
 					"image": "french-onion-soup.png"
 				},
@@ -136,10 +189,26 @@ var	menu = [
 					"name": "Corn Chowder Soup",
 					"price": "21.99",
 					"description": "Potatoes, bacon, creamed corn, margarine, evaporated and whole milk.", 
-					"options": [
-						"Cheddar", 
-						"Mozzarella", 
-						"Gouda"
+					"selections": [
+						{
+							"selection_id": "Cheese",
+							"selection_desc": "Choice of cheese: ",
+							"options": [
+								{
+									"option_desc": "Add Cheddar",
+									"option_price": "1.50"
+								},
+								{
+									"option_desc": "Add Mozzarella",
+									"option_price": "2.59"
+								},
+								{
+									"option_desc": "Add Gouda",
+									"option_price": "1.59"
+								}
+							]
+						}
+						
 					], 
 					"image": "corn-chowder-soup.png"
 				}, 
@@ -147,11 +216,30 @@ var	menu = [
 					"name": "Chicken Noodle Soup", 
 					"price": "17.99", 
 					"description": "Chicken, butter, onion, celery, vegetable broth, carrot, basil, oregano, pepper.", 
-					"options": [
-						"Rice noodle", 
-						"Soba noodle", 
-						"Udon noodle", 
-						"Cellophane noodle"
+					"selections": [
+						{
+							"selection_id": "Noodle",
+							"selection_desc": "Choice of noodle: ",
+							"options": [
+								{
+									"option_desc": "Add Rice noodle",
+									"option_price": "1.50"
+								},
+								{
+									"option_desc": "Add Soba noodle",
+									"option_price": "2.59"
+								},
+								{
+									"option_desc": "Add Udon noodle",
+									"option_price": "3.50"
+								},
+								{
+									"option_desc": "Add Cellophane noodle",
+									"option_price": "1.59"
+								}
+							]
+						}
+						
 					], 
 					"image": "chicken-noodle-soup.png"
 				}
@@ -168,9 +256,22 @@ var	menu = [
 					"name": "Italian Chicken Alfredo",
 					"price": "25.99",
 					"description": "Chicken, garlic, cream cheese, Italian style salad dressing, condensed cream of chicken soup, mushrooms, fresh parsley.", 
-					"options": [
-						"White spaghetti", 
-						"brown spaghetti"
+					"selections": [
+						{
+							"selection_id": "Spaghetti",
+							"selection_desc": "Choice of spaghetti: ",
+							"options": [
+								{
+									"option_desc": "Add White spaghetti",
+									"option_price": "3.50"
+								},
+								{
+									"option_desc": "Add brown spaghetti",
+									"option_price": "4.59"
+								}
+							]
+						}
+						
 					], 
 					"image": "italian-chicken-alfredo.png"
 				}, 
@@ -178,9 +279,22 @@ var	menu = [
 					"name": "Sicilian Spaghetti", 
 					"price": "23.99", 
 					"description": "Olive oil, garlic, bread crumbs, parsley, pepper, parmesan cheese.",
-					"options": [
-						"White spaghetti", 
-						"Brown spaghetti"
+					"selections": [
+						{
+							"selection_id": "Spaghetti",
+							"selection_desc": "Choice of spaghetti: ",
+							"options": [
+								{
+									"option_desc": "Add White spaghetti",
+									"option_price": "3.50"
+								},
+								{
+									"option_desc": "Add brown spaghetti",
+									"option_price": "4.59"
+								}
+							]
+						}
+						
 					], 
 					"image": "sicilian-spaghetti.png"
 				}, 
@@ -188,10 +302,40 @@ var	menu = [
 					"name": "Mexican Spaghetti", 
 					"price": "24.99", 
 					"description": "Groung turkey, black pepper, parmesan cheese, egg, olive oil, onions, bread crumbs, diced tomato.", 
-					"options": [
-						"Mild Hot", 
-						"Medium Hot", 
-						"Extremly Hot"
+					"selections": [
+						{
+							"selection_id": "Spaghetti",
+							"selection_desc": "Choice of spaghetti: ",
+							"options": [
+								{
+									"option_desc": "Add White spaghetti",
+									"option_price": "3.50"
+								},
+								{
+									"option_desc": "Add brown spaghetti",
+									"option_price": "4.59"
+								}
+							]
+						}, 
+						{
+							"selection_id": "Spiciness",
+							"selection_desc": "Choice of spice level: ",
+							"options": [
+								{
+									"option_desc": "Add Mild Hot",
+									"option_price": "0.50"
+								},
+								{
+									"option_desc": "Add Medium Hot",
+									"option_price": "o.90"
+								},
+								{
+									"option_desc": "Add Extremly Hot",
+									"option_price": "1.50"
+								}
+							]
+						}
+						
 					], 
 					"image": "mexican-spaghetti.png"
 				}
