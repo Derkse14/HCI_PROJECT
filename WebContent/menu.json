@@ -64,7 +64,8 @@ var	menu = [
 							"option_desc": "Add strawberry",
 							"option_price": "2.99"
 						}
-					]
+					], 
+					"image": "original-french-toast.png"
 				}
 			]
 		},
@@ -74,22 +75,24 @@ var	menu = [
 				{
 					"name": "Wings",
 					"price": "10.99",
-					"description": "Lightly breaded and fried chicken wings",
+					"description": "Fried chicken wings with cryspy skin",
 					"options": [
 						"Salt & Pepper",
 						"Buffalo",
 						"Honey Garlic"
-					]
+					],
+					"image": "wings.png"
 				},
 				{
 					"name": "Southwest Flatbread",
 					"price": "11.99",
-					"description": "Diced BBQ chicken, bacon and red onions baked on our flatbread with sweet and smoky BBQ sauce and pizza mozzarella, then topped with a drizzle of ranch dressing and a sprinkling of fresh parsley.",
+					"description": "Diced BBQ chicken, bacon and red onions baked on our flatbread with sweet and smoky BBQ sauce and pizza mozzarella, then topped with a drizzle of ranch dressing and a sprinkling of fresh parsley and avocado.",
 					"options": [
 						"Chipotle",
 						"Marinara",
 						"Ranch"
-					]
+					],
+					"image": "Southwest-flatbread.png"
 				}
 			]
 		},
@@ -98,8 +101,21 @@ var	menu = [
 			"items": [
 				{
 					"name": "Caesar Salad",
-					"price": "99.99",
-					"description": "salad sucks"
+					"price": "19.99",
+					"description": "Romaine lettuce and croutons dressed with parmesan cheese, lemon juice, olive oil, egg, Worcestershire sauce, garlic, and black pepper.",
+					"image": "caesar-salad.png"
+				}, 
+				{
+					"name": "Spiralized Vegetable Salad", 
+					"price": "22.99", 
+					"description": "Three different kinds of spiralized vegetables (carrots, zucchini, and yellow squash), roasted chickpeas, avocado, and Greek yogurt.", 
+					"image": "spiralized-vegetable-salad.png"
+				}, 
+				{
+					"name": "Four-Pea Salad", 
+					"price": "25.96", 
+					"description": "Green peas, snap peas, snow peas, pea shoots, mints, vinegar, mustard, peper, olive oil.", 
+					"image": "four-Pea-salad.png"
 				}
 			]
 		},
@@ -107,14 +123,37 @@ var	menu = [
 			"category": "Soups",
 			"items": [
 				{
-					"name": "Awesome Soup",
-					"price": "99.99",
-					"description": "really great soup wow great"
+					"name": "French Onion Soup",
+					"price": "19.96",
+					"description": "Onions, Turkish bay leaves, unsalted butter, flour, home mede beef broth, black pepper, thyme", 
+					"options": [
+						"White wine", 
+						"Red Wine"
+					], 
+					"image": "french-onion-soup.png"
 				},
 				{
-					"name": "Sick Soup",
-					"price": "99.99",
-					"description": "sick as in ill, not plague"
+					"name": "Corn Chowder Soup",
+					"price": "21.99",
+					"description": "Potatoes, bacon, creamed corn, margarine, evaporated and whole milk.", 
+					"options": [
+						"Cheddar", 
+						"Mozzarella", 
+						"Gouda"
+					], 
+					"image": "corn-chowder-soup.png"
+				}, 
+				{
+					"name": "Chicken Noodle Soup", 
+					"price": "17.99", 
+					"description": "Chicken, butter, onion, celery, vegetable broth, carrot, basil, oregano, pepper.", 
+					"options": [
+						"Rice noodle", 
+						"Soba noodle", 
+						"Udon noodle", 
+						"Cellophane noodle"
+					], 
+					"image": "chicken-noodle-soup.png"
 				}
 			]
 		},
@@ -126,9 +165,35 @@ var	menu = [
 			"category": "Pasta",
 			"items": [
 				{
-					"name": "Mom's Spagetti",
-					"price": "11.99",
-					"description": "Knees weak arms spagetti"
+					"name": "Italian Chicken Alfredo",
+					"price": "25.99",
+					"description": "Chicken, garlic, cream cheese, Italian style salad dressing, condensed cream of chicken soup, mushrooms, fresh parsley.", 
+					"options": [
+						"White spaghetti", 
+						"brown spaghetti"
+					], 
+					"image": "italian-chicken-alfredo.png"
+				}, 
+				{
+					"name": "Sicilian Spaghetti", 
+					"price": "23.99", 
+					"description": "Olive oil, garlic, bread crumbs, parsley, pepper, parmesan cheese.",
+					"options": [
+						"White spaghetti", 
+						"Brown spaghetti"
+					], 
+					"image": "sicilian-spaghetti.png"
+				}, 
+				{
+					"name": "Mexican Spaghetti", 
+					"price": "24.99", 
+					"description": "Groung turkey, black pepper, parmesan cheese, egg, olive oil, onions, bread crumbs, diced tomato.", 
+					"options": [
+						"Mild Hot", 
+						"Medium Hot", 
+						"Extremly Hot"
+					], 
+					"image": "mexican-spaghetti.png"
 				}
 			]
 		},
