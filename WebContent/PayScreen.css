@@ -1,0 +1,106 @@
+@CHARSET "ISO-8859-1";
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+	background-color: #B8B8B8;
+	margin: 0;
+	padding: 0;
+}
+
+.background {
+	margin: 0 auto;
+	width:50%;
+	height:100%;
+	display:block;
+ 	background-color:#474747;
+	min-width:450px;
+}
+
+.categories {
+	text-align: center;
+	background-color:inherit;
+	padding-top: 5%;
+}
+
+a {
+	background-color: #4B6B62;
+	border-radius:25px;
+	border:1px solid black;
+	display:block;
+	color: black;
+	font-size:4vmin;
+	length:5%;
+	margin:2% 10%;
+}
+
+a:hover {
+	background-color:#81B883;
+}
+
+.logo {
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+}
+
+p {
+	padding:5% 0;
+	text-align:center;
+	font-size:6vh;
+}
+
+label {
+	font-size:5vmin;
+}
+
+.bill {
+	margin:5%;
+	padding:2%;
+	background-color:#81B7A8;	
+	border-radius:25px;
+	border:1px solid black;
+}
+
+.bill a {
+	margin:1%;
+	padding:0;
+	text-align:center;
+	float:right;
+	width:50%;
+	min-height:30%;
+}
+
+.bill a:nth-child(even) {
+	clear:both;
+}
+
+form {
+	padding:3%;
+	background-color:inherit;
+}
+
+form div {
+	padding:2% 0;
+}
+
+form * {
+	font-size:4vmin;
+}
+
+input, select {
+	float:right;
+	width:40%;
+}
+
+input[maxlength="2"] {
+	width:20%;
+}
+
+form a {
+	text-align:center;
+}

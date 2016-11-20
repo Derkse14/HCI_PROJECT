@@ -11,7 +11,8 @@
   	<script src="MainScreenJS.js"></script>
   	<script src="MenuGenerator.js"></script>
 </head>
-<body onload="generateMenuSidebar(); generateMenu();">
+
+<body onload="generateMenuSidebar(); generateMenu(); generateOrderSidebar();">
 	<div class="header">
 		<img class="logo" src="../Images/Logo2.png">
 		<div class="help">
@@ -21,24 +22,17 @@
 	</div>
 	<div class="leftSideBarStyles">
 		Search <input type="text" name="search">
-		<div class="menuSidebar"></div>
+		<div class="menuSidebar">
+			<div class="collapseButton">
+				<
+			</div>
+		</div>
 	</div>
-	<div class="rightSideBarStyles">
-			<ul>
-				<li>Sally
-					<ul>
-						<li>Pasta Item1</li>
-						<li>Dessert Item1</li>
-					</ul>
-				</li>
-				<li>Jacob
-					<ul>
-						<li>Salad Item5</li>
-						<li>Sandwich Item2</li>
-						<li>Dessert Item4</li>
-					</ul>
-				</li>
-			</ul>
+	<div class="rightSidebar orderOpen">
+		<button id="orderSideButton">></button>
+		<div class="orderSidebar">
+			<button id="orderButton">ORDER</button>
+		</div>
 	</div>
 	<div class="center">
 		<div class="menu"></div>
