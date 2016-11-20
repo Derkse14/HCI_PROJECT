@@ -69,6 +69,17 @@ html, body {
 	background-color:#4B6B62;
 }
 
+.orderSidebar{
+	position: relative;
+	left:20px;
+	font-size: 2vh;
+}
+
+#orderSideButton{
+	position: absolute;
+	top: 50%;
+}
+
 a:link, a:visited{
 	color: black; 
 }
@@ -199,14 +210,13 @@ a:hover {
 	font-size:1vw;
 }
 
-.rightSideBarStyles{
+.rightSidebar{
 	background-color:#B8B8B8;
 	position:fixed;
-	top:150px;
+	top:15%;
 	right:0;
-	width: 25%;
+	width: 17%;
 	height:100%;
-	font-size: 4vh;
 	border: solid 1px black;
 }
 

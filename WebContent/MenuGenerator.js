@@ -178,5 +178,35 @@ $(document).on("click", ".category", function(e) {
 	$(".menu").show();
 	$(".detailedView").css("visibility", "hidden");
 	$(".detailedView").empty();
-	location.reload();
 });
+
+$(document).on("click", "#orderSideButton", function() {
+	var $rightSidebar = $(".rightSidebar");
+	var $button = $(this);
+	var toggleSpeed = "fast";
+	var slideSpeed = "fast";
+
+	$button.prop("disabled", true);
+
+	if($rightSidebar.hasClass("orderOpen")){
+		$(".orderSidebar").toggle(toggleSpeed, function() {
+			$rightSidebar.animate({width: "30px"}, slideSpeed, function() {
+				$rightSidebar.removeClass("orderOpen");
+				$rightSidebar.addClass("orderClosed");
+				$button.text("<");
+				$button.prop("disabled", false);
+			});
+		});
+	} else if($rightSidebar.hasClass("orderClosed")) {
+		$rightSidebar.animate({width: "17%"}, slideSpeed, function() {
+			$(".orderSidebar").toggle(toggleSpeed, function() {
+				$rightSidebar.removeClass("orderClosed");
+				$rightSidebar.addClass("orderOpen");
+				$button.text(">");
+				$button.prop("disabled", false);
+			});
+		});
+	}
+	
+});
+
