@@ -178,6 +178,8 @@ $(document).on("click", ".category", function(e) {
 	$(".menu").show();
 	$(".detailedView").css("visibility", "hidden");
 	$(".detailedView").empty();
+	$(".headerTitle").text("Menu");
+	$(".headerTitle").css("font-size", "7em");
 });
 
 $(document).on("click", "#orderSideButton", function() {
