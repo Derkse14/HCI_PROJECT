@@ -327,7 +327,7 @@ var	menu = [
 								},
 								{
 									"option_desc": "Add Medium Hot",
-									"option_price": "o.90"
+									"option_price": "0.90"
 								},
 								{
 									"option_desc": "Add Extremly Hot",
