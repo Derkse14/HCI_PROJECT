@@ -178,5 +178,7 @@ $(document).on("click", ".category", function(e) {
 	$(".menu").show();
 	$(".detailedView").css("visibility", "hidden");
 	$(".detailedView").empty();
-	location.reload();
+	$(".headerTitle").text("Menu");
+	$(".headerTitle").css("font-size", "7em");
+	/*location.reload();*/
 });

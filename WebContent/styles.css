@@ -216,3 +216,9 @@ a:hover {
    margin-top:-150px; /* this is again negative value of the height of your header */
    visibility:hidden;
 }
+
+.collapseButton {
+	position:fixed;
+	top:50%;
+	left:23%;
+}
