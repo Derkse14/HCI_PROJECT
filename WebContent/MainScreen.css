@@ -7,7 +7,7 @@
 
 html, body {
 	height: 100%;
-	background-color: #80D9FF;
+	background-color: #B8B8B8;
 	margin: 0;
 	padding: 0;
 }
@@ -17,7 +17,7 @@ html, body {
 	width:35%;
 	height:100%;
 	display:block;
- 	background-color:#3DA1CC;
+ 	background-color:#474747;
 }
 
 .categories {
@@ -28,7 +28,7 @@ html, body {
 }
 
 a {
-	background-color: #80D9FF;
+	background-color: #4B6B62;
 	border-radius:25px;
 	border:1px solid black;
 	display:block;
@@ -38,7 +38,7 @@ a {
 }
 
 a:hover {
-	background-color:#FFCC00;
+	background-color:#81B883;
 }
 
 .logo {

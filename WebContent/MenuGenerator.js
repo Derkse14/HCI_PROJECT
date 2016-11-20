@@ -94,22 +94,24 @@ function generateOrderSidebar() {
 			itemList.append(orderedItem);
 		}
 		custDiv.append(itemList);
-		$(".orderList").append(custDiv);
+		$(".orderSidebar").append(custDiv);
 	}
 }
 
 function generateMenu() {
 	for(i = 0; i < menu.length; i++) {
 		var category = menu[i].category;
-		var catDiv = $("<div>", {"id" : category.replace(clean_regex, '')});
+		var span = $("<span>", {"id" : category.replace(clean_regex, ''), "class" : "anchor"});
+		var catDiv = $("<div>", {"class" : category.replace(clean_regex, '')});
+		$(".menu").append(span);
 		$(".menu").append(catDiv);
-		$("#"+category).append($("<h2>", {"class" : "categoryName"}).text(category));
+		$("."+category).append($("<h2>", {"class" : "categoryName"}).text(category));
 		for(j = 0; j < menu[i].items.length; j++) {
 			var item = menu[i].items[j];
 			var itemClass = item.name.replace(clean_regex,'');
 			itemClass = itemClass.replace(clean_regex,'');
 			var itemDiv = $("<div>", {"class" : itemClass+" Item", "onclick" : "generateDetailedView(\'" + itemClass +"\')"});
-			$("#"+category).append(itemDiv);
+			$("."+category).append(itemDiv);
 			$("."+itemClass).append($("<h4>", {"class" : "price"}).text(item.price));
 			$("."+itemClass).append($("<h3>", {"class" : "itemName"}).text(item.name));
 			$("."+itemClass).append($("<p>", {"class" : "description"}).text(item.description));
@@ -129,6 +131,7 @@ function generateDetailedView(name) {
 //		alert(item.name);
 	}
 	$(".headerTitle").text(item.name);
+	$(".headerTitle").css("font-size", "4em");
 	$(".detailedView").append($("<img>", {"src" : "../Images/"+item.image}));
 	$(".detailedView").append($("<p>").text(item.description));
 	$(".detailedView").append($("<div>", {"class" : "selections"}));

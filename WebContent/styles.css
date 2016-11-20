@@ -1,3 +1,9 @@
+html, body {
+	background-color: #B8B8B8;
+	margin:0;
+	padding:0;
+}
+
 .panel{
 	border-radius: 5px;   
 }
@@ -54,16 +60,13 @@
 	margin-top: 55%; 
 }
 
-.leftSideBarStyles{
-	background-color: #3DA1CC; 
-}
-
-a {
+.menuSidebar a {
 	border-radius:25px;
 	border:1px solid black;
 	display:block;
 	font-size:4vh;
 	margin:2% 10%;
+	background-color:#4B6B62;
 }
 
 a:link, a:visited{
@@ -71,16 +74,15 @@ a:link, a:visited{
 }
 
 a:hover {
-	background-color:#FFCC00;
+	background-color:#81B883;
 }
 
 .menu{
-	background-color:#3DA1CC;
 }
 
 .categoryName {
 	text-align:center;
-	background-color:#3DA1CC;
+	background-color: #4B6B62;
 	padding:10px;
 	margin:0;
 }
@@ -91,11 +93,11 @@ a:hover {
 }
 
 .Item:nth-child(even) {
-	background-color:#53cbff;
+	background-color: #81B7A8;
 }
 
 .Item:nth-child(odd) {
-	background-color:#80D9FF;
+	background-color: #6F9E91;
 }
 
 .price {
@@ -113,9 +115,9 @@ a:hover {
 }
 
 .detailedView{
-	background-color:#3DA1CC;
+	background-color:#474747;
 	visibility:hidden;
-	padding:10px;
+	padding:0px 0px 10px 0px;
 }
 
 .detailedView img {
@@ -138,7 +140,79 @@ a:hover {
 .detailedView .backButton {
 	padding:5px;
 	margin:20px;
-	background-color:#ffcc00;	
+	background-color:#4B6B62;	
 	border-radius:25px;
 	border:1px solid black;
+}
+
+.center {
+	margin: 150px auto;
+	width:50%;
+}
+
+.header {
+	width:100%;
+	background-color:#B8B8B8;
+	position: fixed;
+	top:0px;
+	height:150px;
+	min-width: 850px;
+	border: solid 1px black;
+}
+
+.header .headerTitle{
+	margin:0;
+	text-align:center;
+	font-size:7em;
+}
+
+.header .logo {
+	padding-left:5%;
+	float:left;
+	width:250px;
+}
+
+.header .help a {
+	margin-right:5%;
+	padding:5px;
+	float:right;
+	background-color:#81B883;
+	text-align:center;
+	font-size:7em;
+	border-radius:25px;
+	border:1px solid black;
+	text-decoration:none;
+}
+
+.leftSideBarStyles{
+	background-color:#B8B8B8;
+	position:fixed;
+	top:150px;
+	width: 25%;
+	height:100%;
+	text-align:center;
+	font-size: 4vh;
+	border: solid 1px black;
+}
+
+.leftSideBarStyles input {
+	font-size:1vw;
+}
+
+.rightSideBarStyles{
+	background-color:#B8B8B8;
+	position:fixed;
+	top:150px;
+	right:0;
+	width: 25%;
+	height:100%;
+	font-size: 4vh;
+	border: solid 1px black;
+}
+
+.anchor{
+   display:block;
+   height:150px; /* this is the height of your header */
+   margin-top:-150px; /* this is again negative value of the height of your header */
+   visibility:hidden;
 }
