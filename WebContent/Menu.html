@@ -11,7 +11,7 @@
   	<script src="MainScreenJS.js"></script>
   	<script src="MenuGenerator.js"></script>
 </head>
-<body onload="generateMenuSidebar(); generateMenu();">
+<body onload="generateMenuSidebar(); generateMenu(); generateOrderSidebar();">
 	<div class="row">
 		<div><img class="col-xs-3 logo-presentation" src="../Images/Logo.png"> </div>
 		<div class="col-xs-6 header-location headerTitle">Menu</div>
@@ -29,25 +29,9 @@
 			<div class="menu"></div>
 			<div class="detailedView"></div>
 		</div>
-		<div class="col-xs-3 leftSideBarStyles">
+		<div class="col-xs-3">
 			<div class="col-xs-12 row-space category">List of Orders:</div>
-			<div class="col-xs-12">
-				<ul>
-					<li>Sally
-						<ul>
-							<li>Pasta Item1</li>
-							<li>Dessert Item1</li>
-						</ul>
-					</li>
-					<li>Jacob
-						<ul>
-							<li>Salad Item5</li>
-							<li>Sandwich Item2</li>
-							<li>Dessert Item4</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+			<div class="col-xs-12 orderList"></div>
 			<input class="col-xs-12 order-button-location" type="image" src="../Images/Order.png" alt="Submit">
 		</div>	
 	</div>

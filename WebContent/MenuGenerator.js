@@ -14,6 +14,90 @@ function generateMenuSidebar() {
 	}
 }
 
+function generateOrderSidebar() {
+	//will need to get this list of orders from somewhere
+	//pasted this object from the file, should just be passing the object in the final implementation
+	var orders = [ 
+		{
+			"name": "Sally",
+			"items":
+			[
+				{
+					"name": "Steak & Eggs",
+					"description": "Three eggs any style served with your choice cut of seasoned AAA beef.",
+					"ingredients": [
+						"meat",
+						"eggs"
+					],
+					"selections": [
+						{
+							"selection_id": "Steak",
+							"selection_desc": "Choice of steak: ",
+							"options": [
+							{
+								"option_desc": "8 oz New York",
+								"option_price": "18.99"
+							},
+							{
+								"option_desc": "6 oz Sirloin",
+								"option_price": "16.99"
+							}
+						]
+						}
+						
+					],
+					"image": "steak-and-eggs.jpg"
+				},
+				{
+						"name": "Spinach & Swiss Omelette",
+						"price": "14.69",
+						"description": "Swiss cheese, sautéed baby spinach, red onion, tomato and mushrooms finished with creamy hollandaise sauce.",
+						"ingredients": [
+							"cheese?",
+							"eggs probably",
+							"spinach"
+						],
+						"image": "spinach-and-swiss.png"
+				}
+			]
+		},
+		{
+			"name": "Johan",
+			"items": [
+				{
+					"name": "Water from the hose out back",
+					"price": "2.99",
+					"description": "someone will have to add serious ones eventually"
+				},
+				{
+					"name": "Ice Cream Shakes",
+					"price": "5.69",
+					"description": "Try a hand-dipped ice cream shake"
+				},
+				{
+					"name": "Sid\'s \'Special Blend\' 51% Coffee",
+					"price": "1.99",
+					"description": "Enjoy a bottomless cup of freshly brewed regular or naturally decaffeinated \'coffee\' with your meal",
+					"options": [
+						"regular",
+						"decaffeinated"
+					]
+				}]
+		}
+	]; //end of orders
+
+	for(ii = 0; ii < orders.length; ii++) {
+		var custDiv = $("<div>").text(orders[ii].name);
+		var itemList = $("<ul>");
+		for(jj = 0; jj < orders[ii].items.length; jj++) {
+			var orderedItem = $("<li>").text(orders[ii].items[jj].name);
+			itemList.append(orderedItem);
+		}
+		custDiv.append(itemList);
+		$(".orderList").append(custDiv);
+	}
+}
+
 function generateMenu() {
 	for(i = 0; i < menu.length; i++) {
 		var category = menu[i].category;
@@ -93,5 +177,3 @@ $(document).on("click", ".category", function(e) {
 	$(".detailedView").empty();
 	location.reload();
 });
-
-
