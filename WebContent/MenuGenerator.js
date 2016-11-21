@@ -66,7 +66,7 @@ function generateMenuSidebar() {
 	for(ii = 0; ii < menu.length; ii++) {
 		var category = menu[ii].category;
 		var catDiv = $("<div>", {"id" : category.replace(clean_regex, '') + "Sidebar",
-								 "class" : "col-xs-12 row-space category"});
+								 "class" : "category"});
 		$(".menuSidebar").append(catDiv);
 		$("#"+category.replace(clean_regex, '') + "Sidebar").append($("<a>", {"href" : "Menu.html#" + category}).text(category));
 	}
@@ -144,6 +144,10 @@ function generateOrderSidebar() {
 		}
 	]; //end of orders
 
+	if(orders.length > 0) {
+		$(".orderSidebar").append($("<div>").text("List of items to be ordered:"));
+	}
+
 	for(ii = 0; ii < orders.length; ii++) {
 		var custDiv = $("<div>").text(orders[ii].name);
 		var itemList = $("<ul>");
@@ -153,6 +157,10 @@ function generateOrderSidebar() {
 		}
 		custDiv.append(itemList);
 		$(".orderSidebar").append(custDiv);
+	}
+
+	if(orders.length > 0) {
+		$(".orderSidebar").append($("<button>", {"id": "orderButton"}).text("Place Order"));
 	}
 }
 
@@ -311,7 +319,7 @@ $(document).on("click", ".category", function(e) {
 	$(".detailedView").css("visibility", "hidden");
 	$(".detailedView").empty();
 	$(".headerTitle").text("Menu");
-	$(".headerTitle").css("font-size", "7em");
+	$(".headerTitle").css("font-size", "4em");
 });
 
 $(document).on("click", "#orderSideButton", function() {
