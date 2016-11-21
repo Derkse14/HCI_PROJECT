@@ -98,7 +98,19 @@ html, body {
 
 #orderSideButton{
 	position: absolute;
-	top: 50%;
+	top: 45%;
+	background-color: #4B6B62;
+	color: white;
+	height: 31px;
+	border-radius: 50%;
+	border: none;
+}
+
+#orderButton, #payBill{
+	border: none;
+	font-size: 20px;
+	margin-right: 50px;
+	padding: 4px 3px;
 }
 
 a:link, a:visited{
@@ -298,4 +310,9 @@ a:hover {
 	top: 5px;
 	width:80%;
 	border-radius: 15px;
+}
+
+#search {
+	position: relative;
+	top: 13px;
 }

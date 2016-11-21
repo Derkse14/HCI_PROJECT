@@ -94,12 +94,19 @@ function generateOrderSidebar() {
 	}
 
 	if(cusOrderList.length > 0) {
-		$(".orderSidebar").append($("<button>", {"id": "orderButton"}).text("Place Order"));
+		$(".orderSidebar").append($("<button>", {"id": "orderButton", "class": "buttonStyle", "onclick": "placeOrder()"}).text("Place Order"));
 	}
 }
 
 function getHelp(){
 	alert("A server will be there to assist you!");  
+}
+
+function placeOrder(){
+	alert("Your order has been placed!");
+	if($("#payBill").length == 0) {
+		$(".orderSidebar").append($("<button>", {"id": "payBill", "class": "buttonStyle"}).text("Pay Bill"));
+	}
 }
 
 function generateMenu() {
@@ -373,8 +380,3 @@ function listSearchResults(itemList) {
 		$(".search"+itemClass).append($("<p>", {"class" : "description"}).text(item.description));
 	}
 }
-		
-
-
-
-
