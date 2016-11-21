@@ -79,12 +79,19 @@ function generateOrderSidebar() {
 		var custDiv = $("<div>").text(cusOrderList[ii].customer);
 		var itemList = $("<ul>");
 		for(jj = 0; jj < cusOrderList[ii].items.length; jj++) {
+			var args = [cusOrderList[ii].customer, cusOrderList[ii].items[jj].item, cusOrderList[ii].allergies]; 
 			var orderedItem = $("<a>", {"href": "Menu.html#"}).text(cusOrderList[ii].items[jj].item.name);
+			var br = document.createElement("br");
+			orderedItem.append(br);
 			itemList.append(orderedItem);
 		}
 		custDiv.append(itemList);
 		$(".orderSidebar").append(custDiv);
 	}
+}
+
+function getHelp(){
+	alert("A server will be there to assist you!");  
 }
 
 function generateMenu() {

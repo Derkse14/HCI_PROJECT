@@ -33,6 +33,7 @@ var	menu = [
 					"name": "Spinach & Swiss Omelette",
 					"price": "14.69",
 					"description": "Swiss cheese, sautéed baby spinach, red onion, tomato and mushrooms finished with creamy hollandaise sauce.",
+					"selections": [], 
 					"ingredients": [
 						"cheese?",
 						"eggs probably",
@@ -144,11 +145,13 @@ var	menu = [
 					"name": "Caesar Salad",
 					"price": "19.99",
 					"description": "Romaine lettuce and croutons dressed with parmesan cheese, lemon juice, olive oil, egg, Worcestershire sauce, garlic, and black pepper.",
+					"selections": [], 
 					"image": "caesar-salad.png"
 				}, 
 				{
 					"name": "Spiralized Vegetable Salad", 
 					"price": "22.99", 
+					"selections": [], 
 					"description": "Three different kinds of spiralized vegetables (carrots, zucchini, and yellow squash), roasted chickpeas, avocado, and Greek yogurt.", 
 					"image": "spiralized-vegetable-salad.png"
 				}, 
@@ -156,6 +159,7 @@ var	menu = [
 					"name": "Four-Pea Salad", 
 					"price": "25.96", 
 					"description": "Green peas, snap peas, snow peas, pea shoots, mints, vinegar, mustard, peper, olive oil.", 
+					"selections": [], 
 					"image": "four-Pea-salad.png"
 				}
 			]
@@ -253,6 +257,7 @@ var	menu = [
 					"name": "12 oz. New York Strip",
 					"price": "21.99",
 					"description": "A heartier, leaner cut of beef with its own distinctive taste. Seasoned to perfection with special seasoning.", 
+					"selections": [], 
 					"image": "steak.jpg"
 				}
 			]
@@ -355,7 +360,8 @@ var	menu = [
 				{
 					"name": "The American Sandwich",
 					"price": "99.99",
-					"description": "America is sandwiched between Mexico and Snow-Mexico. Soon it will be sandwiched between two walls instead."
+					"description": "America is sandwiched between Mexico and Snow-Mexico. Soon it will be sandwiched between two walls instead.", 
+					"selections": []
 				}
 			]
 		},
@@ -365,21 +371,20 @@ var	menu = [
 				{
 					"name": "Water from the hose out back",
 					"price": "2.99",
-					"description": "someone will have to add serious ones eventually"
+					"description": "someone will have to add serious ones eventually", 
+					"selections": []
 				},
 				{
 					"name": "Ice Cream Shakes",
 					"price": "5.69",
+					"selections": [], 
 					"description": "Try a hand-dipped ice cream shake"
 				},
 				{
 					"name": "Sid\'s \'Special Blend\' 51% Coffee",
 					"price": "1.99",
 					"description": "Enjoy a bottomless cup of freshly brewed regular or naturally decaffeinated \'coffee\' with your meal",
-					"options": [
-						"regular",
-						"decaffeinated"
-					]
+					"selections": []
 				}
 			]
 		},
@@ -389,11 +394,13 @@ var	menu = [
 				{
 					"name": "Creamy Cheesecake",
 					"price": "5.99",
+					"selections": [], 
 					"description": "Something about Cheesecake"
 				},
 				{
 					"name": "Home-style Pie",
 					"price": "4.99",
+					"selections": [], 
 					"description": "3.14"
 				}
 			]
