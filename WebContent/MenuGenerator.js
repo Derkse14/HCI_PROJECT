@@ -113,6 +113,7 @@ function generateMenu() {
 function generateDetailedView(name) {
 	$(".menu").hide();
 	$(".detailedView").css('visibility', 'visible');
+	$(".searchResults").empty();
 	var item = getItem(name);
 	currentItem = item;
 	if(item == null) {
@@ -127,7 +128,7 @@ function generateDetailedView(name) {
 	$(".headerTitle").css("font-size", "4em");
 	$(".detailedView").append($("<img>", {"src" : "../Images/"+item.image}));
 	$(".detailedView").append($("<p>").text(item.description));
-	$(".detailedView").append($("<div>", {"class" : "selections"}));
+	$(".detailedView").append($("<div>", {"class" : "selections detail"}));
 	
 	if(item.selections != null) {
 		for(var i = 0; i < item.selections.length; i++) {
@@ -147,25 +148,28 @@ function generateDetailedView(name) {
 			
 		}
 	}
+	var div = $("<div>", {"class" : "detail"});
 
-	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("Customer Name: "));
-	$(".detailedView").append($("<input>", {"class": "formRow", "type" : "text", "name": "cusName"}));
-	var br = document.createElement("br");
-	$(".detailedView").append($(br));  
-	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("If no allergies, enter: none"));
-	var br = document.createElement("br");
-	$(".detailedView").append($(br)); 
-	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("Allergies: "));
-	$(".detailedView").append($("<input>", {"class": "formRow","type" : "text", "name": "allergies"}));	
-	var br = document.createElement("br");
-	$(".detailedView").append($(br)); 
-	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("Cost: "));
-	$(".detailedView").append($("<label>", {"class": "formRow"}).text("$ "+cost));
-	var br = document.createElement("br");
-	$(".detailedView").append($(br)); 
-	$(".detailedView").append($("<button>", {"class" : "backButton"}).text("Go back"));  
+	div.append($("<label>", {"class": "labelWidth"}).text("Customer Name: "));
+	div.append($("<input>", {"class": "formRow", "type" : "text", "name": "cusName"}));
+	$(".detailedView").append(div);
+	
+	div = $("<div>", {"class" : "detail"});
+	div.append($("<label>", {"class": "labelWidth"}).text("If no allergies, enter: none"));
+	$(".detailedView").append(div);
+	
+	div = $("<div>", {"class" : "detail"});
+	div.append($("<label>", {"class": "labelWidth"}).text("Allergies: "));
+	div.append($("<input>", {"class": "formRow","type" : "text", "name": "allergies"}));	
+	$(".detailedView").append(div);
+
+	div = $("<div>", {"class" : "detail"});
+	div.append($("<label>", {"class": "labelWidth"}).text("Cost: "));
+	div.append($("<label>", {"class": "formRow"}).text("$ "+cost));
+
+	$(".detailedView").append($("<button>", {"class" : "backButton buttonStyle"}).text("Go back"));  
 	var btnConfirmOrder = document.createElement("button");
-	btnConfirmOrder.setAttribute("class", "addToOrder"); 
+	btnConfirmOrder.setAttribute("class", "addToOrder buttonStyle"); 
 	btnConfirmOrder.innerHTML = "Add To Order";  
 	$(".detailedView").append(btnConfirmOrder);
 	
@@ -264,7 +268,10 @@ $(document).on("click", ".backButton", function(e) {
 	$(".menu").show();
 	$(".detailedView").css("visibility", "hidden");
 	$(".detailedView").empty();
-	location.reload();
+	$(".headerTitle").text("Menu");
+	$(".headerTitle").css("font-size", "7em");
+	displaySearch();
+/*	location.reload();*/
 });
 
 $(document).on("click", ".category", function(e) {
@@ -273,6 +280,7 @@ $(document).on("click", ".category", function(e) {
 	$(".detailedView").empty();
 	$(".headerTitle").text("Menu");
 	$(".headerTitle").css("font-size", "7em");
+	$("#search").val("");
 });
 
 $(document).on("click", "#orderSideButton", function() {
@@ -304,4 +312,57 @@ $(document).on("click", "#orderSideButton", function() {
 	}
 	
 });
+
+$(document).ready(function() {
+	$("#search").keyup( function() {
+		var value = $(".detailedView").css("visibility");
+		if(value == "hidden") {
+			displaySearch();
+		}
+	});
+});
+
+function searchByName(searchString) {
+	var results = [];
+	for(i = 0; i < menu.length; i++) {
+		for(j = 0; j < menu[i].items.length; j++) {
+			var item = menu[i].items[j];
+			var itemClass = item.name.replace(clean_regex,'');
+			if(item.name.toLowerCase().indexOf(searchString.toLowerCase()) >= 0) {
+				results.push(item);
+			}
+		}
+	}
+	return results;
+}
+
+function displaySearch() {
+	$(".searchResults").empty();
+	var searchQuery = $("#search").val();
+	if(searchQuery.length > 0) {
+		$(".menu").hide();
+		$(".searchResults").append($("<h2>", {"class" : "categoryName"}).text("Search Results"));
+		var itemList = searchByName(searchQuery);
+		listSearchResults(itemList)
+	} else {
+		$(".menu").show();
+	}
+}
+
+function listSearchResults(itemList) {
+	for(j = 0; j < itemList.length; j++) {
+		var item = itemList[j];
+		var itemClass = item.name.replace(clean_regex,'');
+		itemClass = itemClass.replace(clean_regex,'');
+		var itemDiv = $("<div>", {"class" : "search"+itemClass+" Item", "onclick" : "generateDetailedView(\'" + itemClass +"\')"});
+		$(".searchResults").append(itemDiv);
+		$(".search"+itemClass).append($("<h4>", {"class" : "price"}).text(item.price));
+		$(".search"+itemClass).append($("<h3>", {"class" : "itemName"}).text(item.name));
+		$(".search"+itemClass).append($("<p>", {"class" : "description"}).text(item.description));
+	}
+}
+		
+
+
+
 
