@@ -95,6 +95,7 @@ function generateOrderSidebar() {
 
 	if(cusOrderList.length > 0) {
 		$(".orderSidebar").append($("<button>", {"id": "orderButton"}).text("Place Order"));
+		$(".orderSidebar").append($("<button>", {"id": "payBill"}).text("Pay Bill"));
 	}
 }
 
@@ -323,6 +324,10 @@ $(document).on("click", "#orderSideButton", function() {
 		});
 	}
 	
+});
+
+$(document).on("click", "#payBill", function(e) {
+	window.location = "PayScreen.html";
 });
 
 $(document).ready(function() {
