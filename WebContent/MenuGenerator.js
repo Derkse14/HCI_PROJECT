@@ -4,6 +4,64 @@
 
 var clean_regex = /\W/g;
 
+var cusOrderList = [
+	{
+		"customer": "Sally",
+		"Items": {"item": {
+					"name": "Mexican Spaghetti", 
+					"price": "24.99", 
+					"description": "Groung turkey, black pepper, parmesan cheese, egg, olive oil, onions, bread crumbs, diced tomato.", 
+					"selections": [
+						{
+							"selection_id": "Spaghetti",
+							"selection_desc": "Choice of spaghetti: ",
+							"options": [
+								{
+									"option_desc": "Add White spaghetti",
+									"option_price": "3.50"
+								},
+								{
+									"option_desc": "Add brown spaghetti",
+									"option_price": "4.59"
+								}
+							]
+						}, 
+						{
+							"selection_id": "Spiciness",
+							"selection_desc": "Choice of spice level: ",
+							"options": [
+								{
+									"option_desc": "Add Mild Hot",
+									"option_price": "0.50"
+								},
+								{
+									"option_desc": "Add Medium Hot",
+									"option_price": "0.90"
+								},
+								{
+									"option_desc": "Add Extremly Hot",
+									"option_price": "1.50"
+								}
+							]
+						}
+						
+					], 
+					"image": "mexican-spaghetti.png"
+				}, 
+				"options": [{
+									"option_desc": "Add White spaghetti",
+									"option_price": "3.50"
+							},
+							{
+									"option_desc": "Add Medium Hot",
+									"option_price": "0.90"
+							}], 
+				"cost": "29:89"
+		}, 
+		"allergies": "none" 
+	}
+]; 
+
 function generateMenuSidebar() {
 	for(ii = 0; ii < menu.length; ii++) {
 		var category = menu[ii].category;
@@ -163,8 +221,11 @@ function generateDetailedView(name) {
 	$(".detailedView").append($("<input>", {"class": "formRow", "type" : "text", "name": "cusName"}));
 	var br = document.createElement("br");
 	$(".detailedView").append($(br));  
+	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("If no allergies, enter: none"));
+	var br = document.createElement("br");
+	$(".detailedView").append($(br)); 
 	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("Allergies: "));
-	$(".detailedView").append($("<input>", {"class": "formRow","type" : "text", "name": "allergies"}));
+	$(".detailedView").append($("<input>", {"class": "formRow","type" : "text", "name": "allergies"}));	
 	var br = document.createElement("br");
 	$(".detailedView").append($(br)); 
 	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("Cost: "));
@@ -178,43 +239,50 @@ function generateDetailedView(name) {
 	$(".detailedView").append(btnConfirmOrder);
 	
 	btnConfirmOrder.onclick = function(){
-		var cusItem = {}; 
 		var cusName = document.getElementsByName('cusName')[0].value; 
-		cusItem.cusName = cusName; 
-		var info = "Customer Name: "+ cusName + "\n\n"; 
-		var allergies = document.getElementsByName('allergies')[0].value ; 
-		cusItem.allergies = allergies; 
-		info = info + " Allergies: "+ allergies+ "\n\n"; 
-
-		info = info + " Item: "+item.name+"\n\n"; 
-		var cost = parseFloat(item.price); 
-		selectedOptions = []; 
-		for(var i = 0; i < item.selections.length; i++) {
-			var option = $("#"+item.selections[i].selection_id).val(); 
-			selectedOptions[i] = option; 
-			var index = 0; 
-			var options = item.selections[i].options; 
-			var found = false; 
-			while(index < options.length && !found){
-				var tempOption = options[index]; 
-				if(tempOption.option_desc == option){
-					found = true; 
-				}else{
-					index++; 
+		var allergies = document.getElementsByName('allergies')[0].value ;  
+		if(cusName == "" || allergies == ""){
+			var allertMsg = "Customer Name or Allergies is missing! \n"; 
+			alert(allertMsg); 
+		}else{
+			var cusItem = {}; 	
+			cusItem.cusName = cusName; 
+			var info = "Customer Name: "+ cusName + "\n\n"; 
+			cusItem.allergies = allergies; 
+			info = info + " Allergies: "+ allergies+ "\n\n"; 
+			info = info + " Item: "+item.name+"\n\n"; 
+			var cost = parseFloat(item.price); 
+			selectedOptions = []; 
+			for(var i = 0; i < item.selections.length; i++) {
+				var option = $("#"+item.selections[i].selection_id).val(); 
+				selectedOptions[i] = option; 
+				var index = 0; 
+				var options = item.selections[i].options; 
+				var found = false; 
+				while(index < options.length && !found){
+					var tempOption = options[index]; 
+					if(tempOption.option_desc == option){
+						found = true; 
+					}else{
+						index++; 
+					}
+					
 				}
-				
+				cost = cost + parseFloat(item.selections[i].options[index].option_price); 
 			}
-			cost = cost + parseFloat(item.selections[i].options[index].option_price); 
+
+			info = info + "Cost: "+ cost+"\n\n"; 
+			cost = 0; 
+
+			var confirmedOrder = confirm(info); 
+			if(confirmedOrder == true){
+				//doing something
+			 
+			}
+
 		}
 
-		info = info + "Cost: "+ cost+"\n\n"; 
-		cost = 0; 
-
-		var confirmedOrder = confirm(info); 
-		if(confirmedOrder == true){
-			//doing something
-		 
-		}
+		
 	}
 	
 }
