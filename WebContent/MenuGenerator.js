@@ -180,7 +180,8 @@ function generateDetailedView(name) {
 
 	div = $("<div>", {"class" : "detail"});
 	div.append($("<label>", {"class": "labelWidth"}).text("Cost: "));
-	div.append($("<label>", {"class": "formRow"}).text("$ "+cost));
+	div.append($("<label>", {"class": "formRow"}).text("$"+cost));
+	$(".detailedView").append(div);
 
 	$(".detailedView").append($("<button>", {"class" : "backButton buttonStyle"}).text("Go back"));  
 	var btnConfirmOrder = document.createElement("button");
@@ -284,7 +285,7 @@ $(document).on("click", ".backButton", function(e) {
 	$(".detailedView").css("visibility", "hidden");
 	$(".detailedView").empty();
 	$(".headerTitle").text("Menu");
-	$(".headerTitle").css("font-size", "7em");
+	$(".headerTitle").css("font-size", "4em");
 	displaySearch();
 /*	location.reload();*/
 });
