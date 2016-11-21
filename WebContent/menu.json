@@ -85,7 +85,7 @@ var	menu = [
 				{
 					"name": "Wings",
 					"price": "10.99",
-					"description": "Fried chicken wings with cryspy skin",
+					"description": "Fried chicken wings with crispy skin",
 					"selections": [
 						{
 							"selection_id": "Flavour",

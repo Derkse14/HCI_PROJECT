@@ -170,10 +170,6 @@ function generateDetailedView(name) {
 	$(".detailedView").append(div);
 	
 	div = $("<div>", {"class" : "detail"});
-	div.append($("<label>", {"class": "labelWidth"}).text("If no allergies, enter: none"));
-	$(".detailedView").append(div);
-	
-	div = $("<div>", {"class" : "detail"});
 	div.append($("<label>", {"class": "labelWidth"}).text("Allergies: "));
 	div.append($("<input>", {"class": "formRow","type" : "text", "name": "allergies"}));	
 	$(".detailedView").append(div);
@@ -192,8 +188,8 @@ function generateDetailedView(name) {
 	btnConfirmOrder.onclick = function(){
 		var cusName = document.getElementsByName('cusName')[0].value; 
 		var allergies = document.getElementsByName('allergies')[0].value ;  
-		if(cusName == "" || allergies == ""){
-			var allertMsg = "Customer Name or Allergies is missing! \n"; 
+		if(cusName == ""){
+			var allertMsg = "Please put a customer name.\n"; 
 			alert(allertMsg); 
 		}else{
 			var cusItem = {}; 	
