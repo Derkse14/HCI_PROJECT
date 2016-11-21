@@ -75,7 +75,7 @@ function generateMenuSidebar() {
 function generateOrderSidebar() {
 	$(".orderSidebar").empty();
 
-	if(orders.length > 0) {
+	if(cusOrderList.length > 0) {
 		$(".orderSidebar").append($("<div>").text("List of items to be ordered:"));
 	}
 
@@ -83,16 +83,23 @@ function generateOrderSidebar() {
 		var custDiv = $("<div>").text(cusOrderList[ii].customer);
 		var itemList = $("<ul>");
 		for(jj = 0; jj < cusOrderList[ii].items.length; jj++) {
-			var orderedItem = $("<li>").text(cusOrderList[ii].items[jj].item.name);
+			var args = [cusOrderList[ii].customer, cusOrderList[ii].items[jj].item, cusOrderList[ii].allergies]; 
+			var orderedItem = $("<a>", {"href": "Menu.html#"}).text(cusOrderList[ii].items[jj].item.name);
+			var br = document.createElement("br");
+			orderedItem.append(br);
 			itemList.append(orderedItem);
 		}
 		custDiv.append(itemList);
 		$(".orderSidebar").append(custDiv);
 	}
 
-	if(orders.length > 0) {
+	if(cusOrderList.length > 0) {
 		$(".orderSidebar").append($("<button>", {"id": "orderButton"}).text("Place Order"));
 	}
+}
+
+function getHelp(){
+	alert("A server will be there to assist you!");  
 }
 
 function generateMenu() {
@@ -241,9 +248,7 @@ function generateDetailedView(name) {
 				generateOrderSidebar(); 
 			}
 			cost = 0; 
-
 		}
-
 		
 	}
 	
