@@ -332,6 +332,10 @@ $(document).on("click", "#orderSideButton", function() {
 	
 });
 
+$(document).on("click", "#payBill", function(e) {
+	window.location = "PayScreen.html";
+});
+
 $(document).ready(function() {
 	$("#search").keyup( function() {
 		var value = $(".detailedView").css("visibility");
