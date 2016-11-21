@@ -4,6 +4,7 @@ var	menu = [
 			"items": [
 				{
 					"name": "Steak & Eggs",
+					"price": "16.99",
 					"description": "Three eggs any style served with your choice cut of seasoned AAA beef.",
 					"ingredients": [
 						"meat",
@@ -247,7 +248,14 @@ var	menu = [
 		},
 		{
 			"category": "Steaks",
-			"items": []
+			"items": [
+				{
+					"name": "12 oz. New York Strip",
+					"price": "21.99",
+					"description": "A heartier, leaner cut of beef with its own distinctive taste. Seasoned to perfection with special seasoning.", 
+					"image": "steak.jpg"
+				}
+			]
 		},
 		{
 			"category": "Pasta",

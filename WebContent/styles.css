@@ -48,6 +48,7 @@ html, body {
 	text-align: center;
 }
 
+<<<<<<< HEAD
 .formRow{
 	position: relative;
 	left: 20px; 
@@ -63,6 +64,12 @@ html, body {
 }
 
 
+=======
+.category{
+	font-size: 20px; 
+}
+
+>>>>>>> origin/master
 .order-button-location{
 	position: relative;
 	bottom: 0px;
@@ -155,37 +162,28 @@ a:hover {
 }
 
 .detailedView img {
-	width:100%;
+	width:50%;
 	display:block;
 	margin: 0 auto;
 	background-color:black;
+	max-height:400px;
 	
 }
 
 .detailedView p {
-	margin:10px;
+	margin:2% 5%;
+	padding-bottom: 1%;
 	font-size: 2em;
+	border-bottom: 1px solid black;
 }
 
-.detailedView .selections {
-	margin:10px;
-	width: 100%; 
-}
-
-.detailedView .backButton {
-	padding:5px;
-	margin:20px;
-	background-color:#4B6B62;	
-	border-radius:25px;
-	border:1px solid black;
+.detailedView .backButton{
+	margin-left:5%;
 }
 
 .detailedView .addToOrder{
-	padding: 5px;
-	margin-left:30%;
-	background-color:#4B6B62;	
-	border-radius:25px;
-	border:1px solid black;
+	margin-right:5%;
+	float:right;
 }
 
 .center {
@@ -259,3 +257,21 @@ a:hover {
    visibility:hidden;
 }
 
+.detail {
+	font-size:4vmin;
+	margin:3%;
+}
+
+.detail input,select{
+	float:right;
+	font-size:3vmin;
+	width:50%;
+}
+
+.buttonStyle {
+	padding: 5px;
+	background-color:#4B6B62;	
+	border-radius:25px;
+	border:1px solid black;
+	font-size:4vmin;
+}

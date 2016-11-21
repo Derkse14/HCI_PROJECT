@@ -7,7 +7,7 @@ var clean_regex = /\W/g;
 var cusOrderList = [
 	{
 		"customer": "Sally",
-		"Items": {"item": {
+		"items": [{"item": {
 					"name": "Mexican Spaghetti", 
 					"price": "24.99", 
 					"description": "Groung turkey, black pepper, parmesan cheese, egg, olive oil, onions, bread crumbs, diced tomato.", 
@@ -57,7 +57,7 @@ var cusOrderList = [
 									"option_price": "0.90"
 							}], 
 				"cost": "29:89"
-		}, 
+		}], 
 		"allergies": "none" 
 	}
 ]; 
@@ -73,86 +73,17 @@ function generateMenuSidebar() {
 }
 
 function generateOrderSidebar() {
-	//will need to get this list of orders from somewhere
-	//pasted this object from the file, should just be passing the object in the final implementation
-	var orders = [ 
-		{
-			"name": "Sally",
-			"items":
-			[
-				{
-					"name": "Steak & Eggs",
-					"description": "Three eggs any style served with your choice cut of seasoned AAA beef.",
-					"ingredients": [
-						"meat",
-						"eggs"
-					],
-					"selections": [
-						{
-							"selection_id": "Steak",
-							"selection_desc": "Choice of steak: ",
-							"options": [
-							{
-								"option_desc": "8 oz New York",
-								"option_price": "18.99"
-							},
-							{
-								"option_desc": "6 oz Sirloin",
-								"option_price": "16.99"
-							}
-						]
-						}
-						
-					],
-					"image": "steak-and-eggs.jpg"
-				},
-				{
-						"name": "Spinach & Swiss Omelette",
-						"price": "14.69",
-						"description": "Swiss cheese, sautéed baby spinach, red onion, tomato and mushrooms finished with creamy hollandaise sauce.",
-						"ingredients": [
-							"cheese?",
-							"eggs probably",
-							"spinach"
-						],
-						"image": "spinach-and-swiss.png"
-				}
-			]
-		},
-		{
-			"name": "Johan",
-			"items": [
-				{
-					"name": "Water from the hose out back",
-					"price": "2.99",
-					"description": "someone will have to add serious ones eventually"
-				},
-				{
-					"name": "Ice Cream Shakes",
-					"price": "5.69",
-					"description": "Try a hand-dipped ice cream shake"
-				},
-				{
-					"name": "Sid\'s \'Special Blend\' 51% Coffee",
-					"price": "1.99",
-					"description": "Enjoy a bottomless cup of freshly brewed regular or naturally decaffeinated \'coffee\' with your meal",
-					"options": [
-						"regular",
-						"decaffeinated"
-					]
-				}]
-		}
-	]; //end of orders
+	$(".orderSidebar").empty();
 
 	if(orders.length > 0) {
 		$(".orderSidebar").append($("<div>").text("List of items to be ordered:"));
 	}
 
-	for(ii = 0; ii < orders.length; ii++) {
-		var custDiv = $("<div>").text(orders[ii].name);
+	for(ii = 0; ii < cusOrderList.length; ii++) {
+		var custDiv = $("<div>").text(cusOrderList[ii].customer);
 		var itemList = $("<ul>");
-		for(jj = 0; jj < orders[ii].items.length; jj++) {
-			var orderedItem = $("<li>").text(orders[ii].items[jj].name);
+		for(jj = 0; jj < cusOrderList[ii].items.length; jj++) {
+			var orderedItem = $("<li>").text(cusOrderList[ii].items[jj].item.name);
 			itemList.append(orderedItem);
 		}
 		custDiv.append(itemList);
@@ -190,6 +121,7 @@ function generateMenu() {
 function generateDetailedView(name) {
 	$(".menu").hide();
 	$(".detailedView").css('visibility', 'visible');
+	$(".searchResults").empty();
 	var item = getItem(name);
 	currentItem = item;
 	if(item == null) {
@@ -204,7 +136,7 @@ function generateDetailedView(name) {
 	$(".headerTitle").css("font-size", "4em");
 	$(".detailedView").append($("<img>", {"src" : "../Images/"+item.image}));
 	$(".detailedView").append($("<p>").text(item.description));
-	$(".detailedView").append($("<div>", {"class" : "selections"}));
+	$(".detailedView").append($("<div>", {"class" : "selections detail"}));
 	
 	if(item.selections != null) {
 		for(var i = 0; i < item.selections.length; i++) {
@@ -224,25 +156,28 @@ function generateDetailedView(name) {
 			
 		}
 	}
+	var div = $("<div>", {"class" : "detail"});
 
-	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("Customer Name: "));
-	$(".detailedView").append($("<input>", {"class": "formRow", "type" : "text", "name": "cusName"}));
-	var br = document.createElement("br");
-	$(".detailedView").append($(br));  
-	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("If no allergies, enter: none"));
-	var br = document.createElement("br");
-	$(".detailedView").append($(br)); 
-	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("Allergies: "));
-	$(".detailedView").append($("<input>", {"class": "formRow","type" : "text", "name": "allergies"}));	
-	var br = document.createElement("br");
-	$(".detailedView").append($(br)); 
-	$(".detailedView").append($("<label>", {"class": "labelWidth"}).text("Cost: "));
-	$(".detailedView").append($("<label>", {"class": "formRow"}).text("$ "+cost));
-	var br = document.createElement("br");
-	$(".detailedView").append($(br)); 
-	$(".detailedView").append($("<button>", {"class" : "backButton"}).text("Go back"));  
+	div.append($("<label>", {"class": "labelWidth"}).text("Customer Name: "));
+	div.append($("<input>", {"class": "formRow", "type" : "text", "name": "cusName"}));
+	$(".detailedView").append(div);
+	
+	div = $("<div>", {"class" : "detail"});
+	div.append($("<label>", {"class": "labelWidth"}).text("If no allergies, enter: none"));
+	$(".detailedView").append(div);
+	
+	div = $("<div>", {"class" : "detail"});
+	div.append($("<label>", {"class": "labelWidth"}).text("Allergies: "));
+	div.append($("<input>", {"class": "formRow","type" : "text", "name": "allergies"}));	
+	$(".detailedView").append(div);
+
+	div = $("<div>", {"class" : "detail"});
+	div.append($("<label>", {"class": "labelWidth"}).text("Cost: "));
+	div.append($("<label>", {"class": "formRow"}).text("$ "+cost));
+
+	$(".detailedView").append($("<button>", {"class" : "backButton buttonStyle"}).text("Go back"));  
 	var btnConfirmOrder = document.createElement("button");
-	btnConfirmOrder.setAttribute("class", "addToOrder"); 
+	btnConfirmOrder.setAttribute("class", "addToOrder buttonStyle"); 
 	btnConfirmOrder.innerHTML = "Add To Order";  
 	$(".detailedView").append(btnConfirmOrder);
 	
@@ -261,6 +196,7 @@ function generateDetailedView(name) {
 			info = info + " Item: "+item.name+"\n\n"; 
 			var cost = parseFloat(item.price); 
 			selectedOptions = []; 
+
 			for(var i = 0; i < item.selections.length; i++) {
 				var option = $("#"+item.selections[i].selection_id).val(); 
 				selectedOptions[i] = option; 
@@ -271,6 +207,7 @@ function generateDetailedView(name) {
 					var tempOption = options[index]; 
 					if(tempOption.option_desc == option){
 						found = true; 
+						selectedOptions[i] = tempOption; 
 					}else{
 						index++; 
 					}
@@ -280,19 +217,49 @@ function generateDetailedView(name) {
 			}
 
 			info = info + "Cost: "+ cost+"\n\n"; 
-			cost = 0; 
+			
 
 			var confirmedOrder = confirm(info); 
 			if(confirmedOrder == true){
-				//doing something
-			 
+				var itemObj = {
+								"item": item, 
+								"options": selectedOptions, 
+								"totalCost": cost
+							}; 
+				var customerIn = checkIfCustomerInList(cusName); 	
+				if(customerIn==null){
+					var customer = {
+						"customer": cusName, 
+						"items": [itemObj], 
+						"allergies": allergies
+						}; 
+					cusOrderList.push(customer);
+				}else{
+					customerIn.items.push(itemObj);  
+				}
+				var cus = cusOrderList;
+				generateOrderSidebar(); 
 			}
+			cost = 0; 
 
 		}
 
 		
 	}
 	
+}
+
+function checkIfCustomerInList(cusName){
+	var customer = null;
+	var i = 0; 
+	while(i<cusOrderList.length && customer==null){
+		if(cusOrderList[i].customer == cusName){
+			customer = cusOrderList[i]; 
+		} 
+		i++; 
+	} 
+	return customer; 
+
 }
 
 function getItem(name) {
@@ -311,7 +278,10 @@ $(document).on("click", ".backButton", function(e) {
 	$(".menu").show();
 	$(".detailedView").css("visibility", "hidden");
 	$(".detailedView").empty();
-	location.reload();
+	$(".headerTitle").text("Menu");
+	$(".headerTitle").css("font-size", "7em");
+	displaySearch();
+/*	location.reload();*/
 });
 
 $(document).on("click", ".category", function(e) {
@@ -320,6 +290,7 @@ $(document).on("click", ".category", function(e) {
 	$(".detailedView").empty();
 	$(".headerTitle").text("Menu");
 	$(".headerTitle").css("font-size", "4em");
+	$("#search").val("");
 });
 
 $(document).on("click", "#orderSideButton", function() {
@@ -351,4 +322,57 @@ $(document).on("click", "#orderSideButton", function() {
 	}
 	
 });
+
+$(document).ready(function() {
+	$("#search").keyup( function() {
+		var value = $(".detailedView").css("visibility");
+		if(value == "hidden") {
+			displaySearch();
+		}
+	});
+});
+
+function searchByName(searchString) {
+	var results = [];
+	for(i = 0; i < menu.length; i++) {
+		for(j = 0; j < menu[i].items.length; j++) {
+			var item = menu[i].items[j];
+			var itemClass = item.name.replace(clean_regex,'');
+			if(item.name.toLowerCase().indexOf(searchString.toLowerCase()) >= 0) {
+				results.push(item);
+			}
+		}
+	}
+	return results;
+}
+
+function displaySearch() {
+	$(".searchResults").empty();
+	var searchQuery = $("#search").val();
+	if(searchQuery.length > 0) {
+		$(".menu").hide();
+		$(".searchResults").append($("<h2>", {"class" : "categoryName"}).text("Search Results"));
+		var itemList = searchByName(searchQuery);
+		listSearchResults(itemList)
+	} else {
+		$(".menu").show();
+	}
+}
+
+function listSearchResults(itemList) {
+	for(j = 0; j < itemList.length; j++) {
+		var item = itemList[j];
+		var itemClass = item.name.replace(clean_regex,'');
+		itemClass = itemClass.replace(clean_regex,'');
+		var itemDiv = $("<div>", {"class" : "search"+itemClass+" Item", "onclick" : "generateDetailedView(\'" + itemClass +"\')"});
+		$(".searchResults").append(itemDiv);
+		$(".search"+itemClass).append($("<h4>", {"class" : "price"}).text(item.price));
+		$(".search"+itemClass).append($("<h3>", {"class" : "itemName"}).text(item.name));
+		$(".search"+itemClass).append($("<p>", {"class" : "description"}).text(item.description));
+	}
+}
+		
+
+
+
 
