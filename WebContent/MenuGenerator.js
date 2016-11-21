@@ -79,7 +79,7 @@ function generateOrderSidebar() {
 		var custDiv = $("<div>").text(cusOrderList[ii].customer);
 		var itemList = $("<ul>");
 		for(jj = 0; jj < cusOrderList[ii].items.length; jj++) {
-			var orderedItem = $("<li>").text(cusOrderList[ii].items[jj].item.name);
+			var orderedItem = $("<a>", {"href": "Menu.html#"}).text(cusOrderList[ii].items[jj].item.name);
 			itemList.append(orderedItem);
 		}
 		custDiv.append(itemList);
@@ -229,9 +229,7 @@ function generateDetailedView(name) {
 				generateOrderSidebar(); 
 			}
 			cost = 0; 
-
 		}
-
 		
 	}
 	
